@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTM Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <nav
+      class="bg-white border-b border-b-gray-200 flex md:justify-between item-center text-sm  p-4"
+    >
+      <h3>LinkForge</h3>
+      <ul class="flex space-x-2 text-gray-600 ml-auto">
+        <li class="text-gray-900">Dashboard</li>
+        <li>Campaigns</li>
+        <li>Settings</li>
+        <li>
+          <img src="" alt="" />
+        </li>
+      </ul>
+    </nav>
+
+    <main class="">
+      <div>
+        <div class="container mx-auto p-6">
+          <h1 class="text-md bold">UTM Link Generator</h1>
+          <p class="text-[12px] text-gray-500">Create trackable links for your marketing campaigns</p>
+        </div>
+
+        <form id="form" class="container flex flex-col justify-center item-center space-y-4 mt-4 mx-auto p-6">
+          <div  class="container flex flex-col justify-center item-center space-y-4">
+            <label for="baseUrl" class="block text-md bold">Base URL</label>
+            <input type="text" id="baseUrl" placeholder="Enter your website URL" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md"/>
+          </div>
+          <div class="container flex flex-col justify-center item-center space-y-4  pb-4">
+            <label for="campaignSource" class="block text-md bold">Campaign Source</label>
+            <input type="text" id="campaignSource" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md" placeholder="e.g. newsletter website"/>
+          </div>
+          <div class="container flex flex-col justify-center item-center space-y-4  pb-4">
+            <label for="campaignMedium" class="block text-md bold">Campaign Medium</label>
+            <input type="text" id="campaignMedium" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md" placeholder="e.g. email cpc"/>
+          </div>
+          <div class="container flex flex-col justify-center item-center space-y-4  pb-4">
+            <label for="campaignName" class="block text-md bold">Campaign Name</label>
+            <input type="text" id="campaignName" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md" placeholder="e.g. spring_sales, product_launch"/>
+          </div>
+          <div class="container flex flex-col justify-center item-center space-y-4  pb-4">
+            <label for="campaignTerm" class="block text-md bold">Campaign Term (Optional)</label>
+            <input type="text" id="campaignTerm" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md" placeholder="e.g. running_shoes, blue_t-shirt" />
+          </div>
+          <div class="container flex flex-col justify-center item-center space-y-4  pb-4">
+            <label for="campaignContent" class="block text-md bold">Campaign Content (Optional)</label>
+            <input type="text" id="campaignContent" class=" block bg-gray-200 rounded-md w-[280px] p-3 shadow shadow-green-400 placeholder:text-green-300/90 placeholder:text-md" placeholder="e.g. logo_link, text_link"/>
+          </div>
+        <button type="submit" onclick='generateUrl()' class="cursor-pointer bg-green-400 text-white rounded-full text-center py-2 px-4">Generate UTMLink</button>
+        </form>
+        <div class="container mx-auto p-6  flex flex-col justify-center item-center space-y-4">
+          <h3 class="text-md bold">Generated UTM Link</h3>
+          <div class="bg-gray-200 rounded-md w-[280px] p-2 flex justify-between items-center">
+            <input type="text" id="utmLink" class=" " value="" />
+            <ion-icon name="copy-outline" id="icon"></ion-icon>
+          </div>
+          
+      </div>
+    </main>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  </body>
+</html>
