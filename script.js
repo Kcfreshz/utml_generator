@@ -27,7 +27,10 @@ const generateUrl = function () {
   const finalUrls = `${baseUrl}?${params.toString()}`;
 
   UTMLink.value = finalUrls;
-  console.log(UTMLink.value);
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
 };
 
 icon.addEventListener("click", () => {
@@ -49,5 +52,3 @@ icon.addEventListener("click", () => {
       });
   }
 });
-
-console.log(icon.name);
