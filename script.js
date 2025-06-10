@@ -1,18 +1,32 @@
 "use strict";
 
+const form = document.getElementById("form");
+const baseUrl = document.getElementById("baseUrl");
 const UTMLink = document.getElementById("utmLink");
 const icon = document.getElementById("icon");
+const date = document.querySelector(".year");
 
-const generateUrl = function () {
-  const baseUrl = document.getElementById("baseUrl").value;
+date.textContent = new Date().getFullYear();
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
   const campaignSource = document.getElementById("campaignSource").value;
   const campaignMedium = document.getElementById("campaignMedium").value;
   const campaignName = document.getElementById("campaignName").value;
   const campaignContent = document.getElementById("campaignContent").value;
   const campaignTerm = document.getElementById("campaignTerm").value;
 
-  const form = document.getElementById("form");
-
+  // Validate base URL
+  if (
+    !baseUrl.value ||
+    !baseUrl.value.startsWith("http") ||
+    !baseUrl.value.includes("://")
+  ) {
+    alert(`⚠️ Please enter a valid base URL.
+      It should start with "http://" or "https://".`);
+    return;
+  }
   const params = new URLSearchParams();
   if (campaignSource) params.append("utm_source", campaignSource);
   if (campaignMedium) params.append("utm_medium", campaignMedium);
@@ -20,19 +34,12 @@ const generateUrl = function () {
   if (campaignContent) params.append("utm_content", campaignContent);
   if (campaignTerm) params.append("utm_term", campaignTerm);
 
-  // form.addEventListener("click", (e) => {
-  //   e.preventDefault();
-  // });
-
-  const finalUrls = `${baseUrl}?${params.toString()}`;
+  const finalUrls = `${baseUrl.value}?${params.toString()}`;
 
   UTMLink.value = finalUrls;
+});
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-  });
-};
-
+// Copying the url
 icon.addEventListener("click", () => {
   const link = UTMLink.value;
   if (link) {
