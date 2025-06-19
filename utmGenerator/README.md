@@ -48,7 +48,7 @@ You’ll get a trackable URL that you can analyze in Google Analytics.
 ## 📦 Installation (for local use)
 
 ```bash
-git clone https://github.com/yourusername/utm-link-generator.git
+git clone https://github.com/Kcfreshz/utm-link-generator.git
 cd utm-link-generator
 open index.html
 ```
