@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Free UTM Link Generator | Track Campaign Traffic with UTM Parameters
+    </title>
+    <link rel="stylesheet" href="output.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="relatives">
+    <nav
+      class="bg-white border-b border-b-[#38e078] flex justify-between items-center h-20 mb-10 px-2 sm:justify-around relatives z-10"
+    >
+      <h1 class="text-[20pxs] pl-1 font-bold">LinkForge</h1>
+      <ul
+        class="flex items-center justify-arounds sm:space-x-4 text-gray-600 text-[18px] space-x-2"
+      >
+        <li class="text-gray-900">Dashboard</li>
+        <li>Campaigns</li>
+        <li class="hidden sm:block">Settings</li>
+      </ul>
+    </nav>
+
+    <div
+      class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#38E078_1px,transparent_1px)] [background-size:16px_16px]"
+    ></div>
+
+    <main class="pt-12 mb-10 sm:mb-32 z-10">
+      <div class="container mx-auto pt-4 px-2 text-center">
+        <h1 class="text-2xl font-bold">UTM Link Generator</h1>
+        <p class="text-[13px] text-gray-300">
+          Create trackable links for your marketing campaigns
+        </p>
+      </div>
+
+      <form
+        id="form"
+        class="container flex flex-col justify-center items-center space-y-4 mt-4 mx-auto p-6"
+      >
+        <div
+          class="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4"
+        >
+          <section>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="baseUrl" class="block text-[20px] font-normal"
+                >Base URL</label
+              >
+              <input
+                type="text"
+                id="baseUrl"
+                placeholder="Enter your website URL"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+              />
+            </div>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="campaignSource" class="block text-[20px] font-normal"
+                >Campaign Source</label
+              >
+              <input
+                type="text"
+                id="campaignSource"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+                placeholder="e.g. newsletter website"
+              />
+            </div>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="campaignMedium" class="block text-[20px] font-normal"
+                >Campaign Medium</label
+              >
+              <input
+                type="text"
+                id="campaignMedium"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+                placeholder="e.g. email cpc"
+              />
+            </div>
+          </section>
+          <section>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="campaignName" class="block text-[20px] font-normal"
+                >Campaign Name (optional)</label
+              >
+              <input
+                type="text"
+                id="campaignName"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+                placeholder="e.g. spring_sales, product_launch"
+              />
+            </div>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="campaignTerm" class="block text-[20px] font-normal"
+                >Campaign Term (optional)</label
+              >
+              <input
+                type="text"
+                id="campaignTerm"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+                placeholder="e.g. running_shoes, blue_t-shirt"
+              />
+            </div>
+            <div
+              class="container flex flex-col justify-center item-center pb-4"
+            >
+              <label for="campaignContent" class="block text-[20px] font-normal"
+                >Campaign Content (optional)</label
+              >
+              <input
+                type="text"
+                id="campaignContent"
+                class="block bg-white rounded-md border border-green-200 w-[280px] text-xl text-[#38e078] p-3 shadow shadow-green-400 appearance-none focus:outline-none focus:ring-2 focus:ring-[#38e078] placeholder:text-green-300/90 placeholder:text-md"
+                placeholder="e.g. logo_link, text_link"
+              />
+            </div>
+          </section>
+        </div>
+        <button
+          class="cursor-pointer bg-green-400 text-white rounded-full text-center py-2 px-4 w-[280px] sm:self-start mx-auto"
+        >
+          Generate UTMLink
+        </button>
+      </form>
+      <div
+        class="container mx-auto p-6 flex flex-col justify-center item-center space-y-4 sm:flex-row sm:space-x-4"
+      >
+        <h3 class="text-xl font-semibold">Generated UTM Link:</h3>
+        <div
+          class="bg-gray-200 rounded-md w-[280px] p-2 flex justify-between items-center mx-autos"
+        >
+          <input type="text" id="utmLink" class="" value="" />
+          <ion-icon name="copy-outline" id="icon"></ion-icon>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container mx-auto text-center p-4">
+        <p class="text-gray-500 text-sm">
+          This tool helps you create UTM parameters to track your marketing
+          campaign effectively
+        </p>
+        <p class="text-gray-400 text-sm">
+          &copy; <span class="year"></span> LinkForge. Built with ❤️ by KC Fresh
+        </p>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
